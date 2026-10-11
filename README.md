@@ -95,8 +95,13 @@ The `SITE_URL` environment variable overrides `site.url` for one build, so a
 preview or demo deployment can get correct canonical URLs without a code
 change: `SITE_URL=https://preview.example.com pnpm build`.
 
+- **Cloudflare Workers** — `wrangler.jsonc` is included (static assets,
+  `404-page` handling). In Workers Builds set the build command to
+  `pnpm run build` and the deploy command to `npx wrangler deploy`.
+  `public/_headers` is honored. Workers Builds has no deploy hooks, so the
+  scheduled rebuild below does not apply.
 - **Cloudflare Pages, Netlify** — read `public/_headers` as is. The security
-  headers and cache rules apply without further setup.
+  headers and cache rules apply without further setup. Both offer deploy hooks.
 - **Vercel** — ignores `_headers`. Copy the rules into `vercel.json`:
 
   ```json
@@ -186,8 +191,9 @@ pnpm dev
 
 ### デプロイ
 
-`pnpm build` で `dist/` ができます。Cloudflare Pages と Netlify は
-`public/_headers` をそのまま読みます。Vercel は `vercel.json` に書き写し、
+`pnpm build` で `dist/` ができます。Cloudflare Workers 用の `wrangler.jsonc` を
+同梱しています（Workers Builds のデプロイコマンドは `npx wrangler deploy`）。
+Cloudflare Workers / Pages と Netlify は `public/_headers` をそのまま読みます。Vercel は `vercel.json` に書き写し、
 GitHub Pages はカスタムヘッダを設定できません（CSP 無しで動きます）。
 `public/fonts/` はビルド時に生成されるので、`dist/` を手で上げる場合は
 ローカルでビルドしてください。環境変数 `SITE_URL` を設定すると、そのビルドだけ

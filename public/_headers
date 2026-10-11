@@ -1,4 +1,4 @@
-# Security headers for every response, in the format Cloudflare Pages and
+# Security headers for every response, in the format Cloudflare Workers / Pages and
 # Netlify read. Other hosts: see README → Deploy.
 #
 # The site ships no inline scripts or styles (astro.config.mjs keeps CSS
