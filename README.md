@@ -4,7 +4,9 @@ A dark, zero-JavaScript Astro template for a personal site: the things you
 built, a short bio, and a way to reach you. Japanese typography first, but
 every string is yours to change.
 
-[日本語の説明はこちら](#日本語)
+**Demo:** https://tomoshibi.c12o.net · [日本語の説明はこちら](#日本語)
+
+![Home page: hero with name and facts, then project cards](docs/screenshot.webp)
 
 ## Features
 
@@ -89,6 +91,10 @@ in `src/layouts/Base.astro`. `FONT_DISPLAY=optional pnpm build` changes
 
 `pnpm build` writes `dist/`. Deploy it to any static host.
 
+The `SITE_URL` environment variable overrides `site.url` for one build, so a
+preview or demo deployment can get correct canonical URLs without a code
+change: `SITE_URL=https://preview.example.com pnpm build`.
+
 - **Cloudflare Pages, Netlify** — read `public/_headers` as is. The security
   headers and cache rules apply without further setup.
 - **Vercel** — ignores `_headers`. Copy the rules into `vercel.json`:
@@ -139,6 +145,8 @@ MIT © 2026 [Seu](https://c12o.net). Issues and pull requests are welcome.
 
 ## 日本語
 
+デモ: https://tomoshibi.c12o.net
+
 個人サイト向けの Astro テンプレートです。作ったもの、経歴、連絡先を 1 ページに
 まとめ、各プロジェクトに詳細ページを持たせます。ランタイム JavaScript はゼロで、
 日本語組版を前提にデザインしています。
@@ -182,7 +190,8 @@ pnpm dev
 `public/_headers` をそのまま読みます。Vercel は `vercel.json` に書き写し、
 GitHub Pages はカスタムヘッダを設定できません（CSP 無しで動きます）。
 `public/fonts/` はビルド時に生成されるので、`dist/` を手で上げる場合は
-ローカルでビルドしてください。
+ローカルでビルドしてください。環境変数 `SITE_URL` を設定すると、そのビルドだけ
+`site.url` を上書きできます（プレビューやデモ用）。
 
 ブログ側のテンプレート **Tsurezure** を準備中です。
 
