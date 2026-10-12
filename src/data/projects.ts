@@ -59,6 +59,6 @@ export const projects: Project[] = [
       src: '/screenshots/sample-two.webp',
       alt: 'ターミナルで notes search を実行し、日付付きの検索結果が 3 件表示されている',
     },
-    link: { label: 'github.com/your-handle/notes', href: 'https://github.com/your-handle/notes' },
+    link: { label: 'example.com/notes', href: 'https://example.com/notes' },
   },
 ]

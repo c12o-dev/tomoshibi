@@ -24,9 +24,9 @@ export const site: SiteConfig = {
   lang: 'ja',
   ogLocale: 'ja_JP',
   links: {
-    github: 'https://github.com/your-handle',
+    github: 'https://github.com',
     // blog: 'https://blog.example.com',
-    // x: 'https://x.com/your-handle',
+    // x: 'https://x.com',
   },
   // Any RSS 2.0 feed, e.g. 'https://blog.example.com/rss.xml'. null hides the section.
   feedUrl: null,
@@ -47,7 +47,7 @@ export const nav: NavItem[] = [
   { label: 'Projects', href: '/#projects', external: false },
   { label: 'About', href: '/#about', external: false },
   // { label: 'Blog', href: 'https://blog.example.com', external: true, icon: 'posts' },
-  { label: 'GitHub', href: 'https://github.com/your-handle', external: true, icon: 'code' },
+  { label: 'GitHub', href: 'https://github.com', external: true, icon: 'code' },
 ]
 
 export const hero: HeroConfig = {
